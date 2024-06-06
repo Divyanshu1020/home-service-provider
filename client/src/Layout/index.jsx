@@ -1,23 +1,23 @@
-import React, { useState, useContext, useEffect } from 'react';
-import { Layout, Menu, Input, Select, Button } from 'antd';
 import {
   DotChartOutlined,
+  LogoutOutlined,
   PieChartOutlined,
+  ProfileOutlined,
   RadarChartOutlined,
+  SearchOutlined,
+  SettingOutlined,
   TeamOutlined,
   UserOutlined,
-  ProfileOutlined,
-  LogoutOutlined,
-  SettingOutlined,
-  SearchOutlined,
 } from '@ant-design/icons';
-import { Link, useHistory, useLocation } from 'react-router-dom';
+import { Button, Input, Layout, Menu, Select } from 'antd';
 import Avatar from 'antd/lib/avatar/avatar';
 import axios from 'axios';
-import Logo from './Logo';
+import React, { useContext, useEffect, useState } from 'react';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import { GlobalContext } from '../Context/GlobalContext';
 import API from '../api';
 import { getArrayParams, setUrlString } from '../utils/paramsConvert';
+import Logo from './Logo';
 
 const { Option } = Select;
 
@@ -153,10 +153,10 @@ function Index({ children }) {
                   <Option value='all'>Category (All)</Option>
                   {data.categories.length > 0
                     ? data.categories.map((category) => (
-                        <Option key={category.id} value={category.id}>
-                          {category.name}
-                        </Option>
-                      ))
+                      <Option key={category.id} value={category.id}>
+                        {category.name}
+                      </Option>
+                    ))
                     : null}
                 </Select>
                 <Select
@@ -171,10 +171,10 @@ function Index({ children }) {
                   <Option value='all'>State (All)</Option>
                   {data.states.length > 0
                     ? data.states.map((state) => (
-                        <Option key={state.id} value={state.id}>
-                          {state.state}
-                        </Option>
-                      ))
+                      <Option key={state.id} value={state.id}>
+                        {state.state}
+                      </Option>
+                    ))
                     : null}
                 </Select>
                 <Input
@@ -257,7 +257,7 @@ function Index({ children }) {
           </div>
         </Content>
         <Footer style={{ textAlign: 'center' }}>
-          Bhavya Design ©{new Date().getFullYear()} Created by bhavyabhut
+          TIT-E ©{new Date().getFullYear()}
         </Footer>
       </Layout>
     </Layout>
